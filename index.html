@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Heart Animation</title>
+<title>heart by kurona</title>
 <style>
     * {
         margin: 0;
@@ -473,6 +473,7 @@
         z-index: 1;
         transform-style: preserve-3d;
         backface-visibility: hidden;
+        will-change: opacity, transform;
     }
 
     .text-item:nth-child(1) { animation-delay: 0s; z-index: 11; }
@@ -493,13 +494,13 @@
         line-height: 1.8;
         word-spacing: 4px;
         padding: 18px 25px;
-        background: rgba(10, 10, 10, 0.7);
+        background: rgba(10, 10, 10, 0.85);
         border-radius: 25px;
-        border: 2.5px solid rgba(255, 77, 166, 0.5);
+        border: 2.5px solid rgba(255, 77, 166, 0.6);
         backdrop-filter: blur(15px);
         box-shadow: 
-            0 0 30px rgba(255, 77, 166, 0.3),
-            inset 0 0 20px rgba(255, 77, 166, 0.1);
+            0 0 30px rgba(255, 77, 166, 0.4),
+            inset 0 0 20px rgba(255, 77, 166, 0.15);
     }
 
     .emoji-icon {
@@ -509,6 +510,7 @@
         animation: emojiPulse 2.5s ease-in-out infinite;
         filter: drop-shadow(0 0 8px rgba(255, 77, 166, 0.8));
         opacity: 0;
+        will-change: opacity, transform;
     }
 
     .emoji-icon:first-child { animation-delay: 0s; }
@@ -527,28 +529,33 @@
     @keyframes textAppear {
         0% { 
             opacity: 0;
-            transform: translateY(50px) scale(0.7) rotateX(90deg) rotateZ(-20deg);
-            filter: blur(30px);
+            transform: translateY(80px) scale(0.5) rotateX(100deg);
+            filter: blur(40px);
+        }
+        1% { 
+            opacity: 0.5;
+            transform: translateY(40px) scale(0.8) rotateX(50deg);
+            filter: blur(20px);
         }
         2% { 
             opacity: 1;
-            transform: translateY(0) scale(1) rotateX(0deg) rotateZ(0deg);
+            transform: translateY(0) scale(1) rotateX(0deg);
             filter: blur(0);
         }
-        78% { 
+        76% { 
             opacity: 1;
-            transform: translateY(0) scale(1) rotateX(0deg) rotateZ(0deg);
+            transform: translateY(0) scale(1) rotateX(0deg);
             filter: blur(0);
         }
-        98% { 
-            opacity: 0;
-            transform: translateY(-50px) scale(0.7) rotateX(-90deg) rotateZ(20deg);
-            filter: blur(30px);
+        78% {
+            opacity: 0.5;
+            transform: translateY(-40px) scale(0.8) rotateX(-50deg);
+            filter: blur(20px);
         }
         100% { 
             opacity: 0;
-            transform: translateY(-50px) scale(0.7) rotateX(-90deg) rotateZ(20deg);
-            filter: blur(30px);
+            transform: translateY(-80px) scale(0.5) rotateX(-100deg);
+            filter: blur(40px);
         }
     }
     
